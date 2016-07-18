@@ -68,6 +68,8 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Aspnet.Identity.Samples.Guid.Nuget.nuspec" />
+    <Content Include="content\web.config.transform" />
+    <Content Include="web.config.transform" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -82,7 +84,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="content\" />
     <Folder Include="lib\" />
     <Folder Include="tools\" />
   </ItemGroup>
