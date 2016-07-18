@@ -8,4 +8,4 @@ Create a empty project Asp Net MVC
 
 In **Package Manager Console**, use the following command:
 
-`Install-Package Microsoft.Aspnet.Identity.Samples.Guid`
+`Install-Package Microsoft.AspNet.Identity.Guid`
