@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Aspnet.Identity.Samples.Guid</id>
-    <version>0.1.1</version>
-    <title>Aspnet.Identity.Samples.Guid</title>
-    <authors>Pablo Tôndolo de Vargas</authors>
-    <owners>Pablo Tôndolo de Vargas</owners>
+    <id>Microsoft.AspNet.Identity.Guid</id>
+    <version>0.1.2</version>
+    <title>Microsoft.AspNet.Identity.Guid</title>
+    <authors>pablotdv</authors>
+    <owners>pablotdv</owners>
     <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
     <projectUrl>https://github.com/pablotdv/Aspnet-Identity-Guid</projectUrl>
     <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
