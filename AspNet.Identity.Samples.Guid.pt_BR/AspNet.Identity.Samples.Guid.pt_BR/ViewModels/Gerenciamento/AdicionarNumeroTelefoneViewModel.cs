@@ -6,11 +6,11 @@ using System.Web;
 
 namespace AspNet.Identity.Samples.pt_BR.ViewModels
 {
-    public class AddPhoneNumberViewModel
+    public class AdicionarNumeroTelefoneViewModel
     {
         [Required]
         [Phone]
-        [Display(Name = "Phone Number")]
-        public string Number { get; set; }
+        [Display(Name = "Número do telefone")]
+        public string Numero { get; set; }
     }
 }

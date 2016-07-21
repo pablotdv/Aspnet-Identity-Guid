@@ -6,7 +6,7 @@ using System.Web;
 
 namespace AspNet.Identity.Samples.pt_BR.ViewModels
 {
-    public class LoginViewModel
+    public class EntrarViewModel
     {
         [Required]
         [Display(Name = "Email")]

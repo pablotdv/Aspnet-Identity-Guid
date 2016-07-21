@@ -107,24 +107,24 @@ namespace IdentitySample.Controllers
         // POST: /Account/AddPhoneNumber
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> AddPhoneNumber(AddPhoneNumberViewModel model)
+        public async Task<ActionResult> AddPhoneNumber(AdicionarNumeroTelefoneViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
             // Generate the token and send it
-            var code = await UserManager.GenerateChangePhoneNumberTokenAsync(Guid.Parse(User.Identity.GetUserId()), model.Number);
+            var code = await UserManager.GenerateChangePhoneNumberTokenAsync(Guid.Parse(User.Identity.GetUserId()), model.Numero);
             if (UserManager.SmsService != null)
             {
                 var message = new IdentityMessage
                 {
-                    Destination = model.Number,
+                    Destination = model.Numero,
                     Body = "Your security code is: " + code
                 };
                 await UserManager.SmsService.SendAsync(message);
             }
-            return RedirectToAction("VerifyPhoneNumber", new { PhoneNumber = model.Number });
+            return RedirectToAction("VerifyPhoneNumber", new { PhoneNumber = model.Numero });
         }
 
         //
@@ -243,13 +243,13 @@ namespace IdentitySample.Controllers
         // POST: /Account/Manage
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ChangePassword(ChangePasswordViewModel model)
+        public async Task<ActionResult> ChangePassword(AlterarSenhaViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
-            var result = await UserManager.ChangePasswordAsync(GetUserId(), model.OldPassword, model.NewPassword);
+            var result = await UserManager.ChangePasswordAsync(GetUserId(), model.SenhaAtual, model.SenhaNova);
             if (result.Succeeded)
             {
                 var user = await UserManager.FindByIdAsync(GetUserId());

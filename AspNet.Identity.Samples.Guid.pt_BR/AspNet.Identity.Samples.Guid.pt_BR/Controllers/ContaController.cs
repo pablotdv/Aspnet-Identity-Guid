@@ -43,7 +43,7 @@ namespace IdentitySample.Controllers
         //
         // GET: /Account/Login
         [AllowAnonymous]
-        public ActionResult Login(string returnUrl)
+        public ActionResult Entrar(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
             return View();
@@ -65,7 +65,7 @@ namespace IdentitySample.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        public async Task<ActionResult> Entrar(EntrarViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
             {
