@@ -3,8 +3,8 @@ using System;
 
 namespace IdentitySample.Models
 {
-    public class ApplicationUserClaim : IdentityUserClaim<Guid>
+    public class UsuarioLogin : IdentityUserLogin<Guid>
     {
-
+        
     }
 }

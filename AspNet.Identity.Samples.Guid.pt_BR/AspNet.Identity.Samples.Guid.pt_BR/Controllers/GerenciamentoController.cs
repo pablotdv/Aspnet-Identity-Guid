@@ -1,4 +1,5 @@
-﻿using AspNet.Identity.Samples.pt_BR.ViewModels;
+﻿using AspNet.Identity.Samples.pt_BR.Models;
+using AspNet.Identity.Samples.pt_BR.ViewModels;
 using IdentitySample.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -12,13 +13,13 @@ using System.Web.Mvc;
 namespace IdentitySample.Controllers
 {
     [Authorize]
-    public class ManageController : Controller
+    public class GerenciamentoController : Controller
     {
-        public ManageController()
+        public GerenciamentoController()
         {
         }
 
-        public ManageController(ApplicationUserManager userManager)
+        public GerenciamentoController(ApplicationUserManager userManager)
         {
             UserManager = userManager;
         }
@@ -324,7 +325,7 @@ namespace IdentitySample.Controllers
         public ActionResult LinkLogin(string provider)
         {
             // Request a redirect to the external login provider to link a login for the current user
-            return new AccountController.ChallengeResult(provider, Url.Action("LinkLoginCallback", "Manage"), User.Identity.GetUserId());
+            return new ContaController.ChallengeResult(provider, Url.Action("LinkLoginCallback", "Manage"), User.Identity.GetUserId());
         }
 
         //
@@ -352,7 +353,7 @@ namespace IdentitySample.Controllers
             }
         }
 
-        private async Task SignInAsync(ApplicationUser user, bool isPersistent)
+        private async Task SignInAsync(Usuario user, bool isPersistent)
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ExternalCookie, DefaultAuthenticationTypes.TwoFactorCookie);
             AuthenticationManager.SignIn(new AuthenticationProperties { IsPersistent = isPersistent }, await user.GenerateUserIdentityAsync(UserManager));

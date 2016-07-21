@@ -10,17 +10,18 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using AspNet.Identity.Samples.pt_BR.ViewModels;
+using AspNet.Identity.Samples.pt_BR.Models;
 
 namespace IdentitySample.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class ContaController : Controller
     {
-        public AccountController()
+        public ContaController()
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public ContaController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -150,7 +151,7 @@ namespace IdentitySample.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { Id = Guid.NewGuid(), UserName = model.Email, Email = model.Email };
+                var user = new Usuario { Id = Guid.NewGuid(), UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -361,7 +362,7 @@ namespace IdentitySample.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new Usuario { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
