@@ -41,7 +41,7 @@ namespace IdentitySample.Controllers
         }
 
         //
-        // GET: /Account/Login
+        // GET: /Conta/Entrar
         [AllowAnonymous]
         public ActionResult Entrar(string returnUrl)
         {
@@ -61,7 +61,7 @@ namespace IdentitySample.Controllers
         }
 
         //
-        // POST: /Account/Login
+        // POST: /Conta/Entrar
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -74,7 +74,7 @@ namespace IdentitySample.Controllers
 
             // This doen't count login failures towards lockout only two factor authentication
             // To enable password failures to trigger lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Senha, model.LembrarMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -91,9 +91,9 @@ namespace IdentitySample.Controllers
         }
 
         //
-        // GET: /Account/VerifyCode
+        // GET: /Conta/VerificarCodigo
         [AllowAnonymous]
-        public async Task<ActionResult> VerifyCode(string provider, string returnUrl)
+        public async Task<ActionResult> VerificarCodigo(string provider, string returnUrl)
         {
             // Require that the user has already logged in via username/password or external login
             if (!await SignInManager.HasBeenVerifiedAsync())
@@ -105,22 +105,22 @@ namespace IdentitySample.Controllers
             {
                 ViewBag.Status = "For DEMO purposes the current " + provider + " code is: " + await UserManager.GenerateTwoFactorTokenAsync(user.Id, provider);
             }
-            return View(new VerifyCodeViewModel { Provider = provider, ReturnUrl = returnUrl });
+            return View(new VerificarCodigoViewModel { Provider = provider, ReturnUrl = returnUrl });
         }
 
         //
-        // POST: /Account/VerifyCode
+        // POST: /Conta/VerificarCodigo
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> VerifyCode(VerifyCodeViewModel model)
+        public async Task<ActionResult> VerificarCodigo(VerificarCodigoViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
 
-            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent: false, rememberBrowser: model.RememberBrowser);
+            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Codigo, isPersistent: false, rememberBrowser: model.LembrarNavegador);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -129,37 +129,37 @@ namespace IdentitySample.Controllers
                     return View("Lockout");
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid code.");
+                    ModelState.AddModelError("", "Código inválido.");
                     return View(model);
             }
         }
 
         //
-        // GET: /Account/Register
+        // GET: /Conta/Registrar
         [AllowAnonymous]
-        public ActionResult Register()
+        public ActionResult Registrar()
         {
             return View();
         }
 
         //
-        // POST: /Account/Register
+        // POST: /Conta/Registrar
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> Registrar(RegistrarViewModel model)
         {
             if (ModelState.IsValid)
             {
                 var user = new Usuario { Id = Guid.NewGuid(), UserName = model.Email, Email = model.Email };
-                var result = await UserManager.CreateAsync(user, model.Password);
+                var result = await UserManager.CreateAsync(user, model.Senha);
                 if (result.Succeeded)
                 {
                     var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    var callbackUrl = Url.Action("ConfirmarEmail", "Conta", new { id = user.Id, codigo = code }, protocol: Request.Url.Scheme);
                     await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
                     ViewBag.Link = callbackUrl;
-                    return View("DisplayEmail");
+                    return View("ExibirEmail");
                 }
                 AddErrors(result);
             }
@@ -169,20 +169,20 @@ namespace IdentitySample.Controllers
         }
 
         //
-        // GET: /Account/ConfirmEmail
+        // GET: /Conta/ConfirmarEmail
         [AllowAnonymous]
-        public async Task<ActionResult> ConfirmEmail(Guid userId, string code)
+        public async Task<ActionResult> ConfirmarEmail(Guid id, string codigo)
         {
-            if (userId == null || code == null)
+            if (id == null || codigo == null)
             {
                 return View("Error");
             }
-            var result = await UserManager.ConfirmEmailAsync(userId, code);
-            return View(result.Succeeded ? "ConfirmEmail" : "Error");
+            var result = await UserManager.ConfirmEmailAsync(id, codigo);
+            return View(result.Succeeded ? "ConfirmarEmail" : "Error");
         }
 
         //
-        // GET: /Account/ForgotPassword
+        // GET: /Conta/ForgotPassword
         [AllowAnonymous]
         public ActionResult ForgotPassword()
         {
@@ -190,7 +190,7 @@ namespace IdentitySample.Controllers
         }
 
         //
-        // POST: /Account/ForgotPassword
+        // POST: /Conta/ForgotPassword
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -206,7 +206,7 @@ namespace IdentitySample.Controllers
                 }
 
                 var code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                var callbackUrl = Url.Action("ResetPassword", "Conta", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                 await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking here: <a href=\"" + callbackUrl + "\">link</a>");
                 ViewBag.Link = callbackUrl;
                 return View("ForgotPasswordConfirmation");
@@ -217,7 +217,7 @@ namespace IdentitySample.Controllers
         }
 
         //
-        // GET: /Account/ForgotPasswordConfirmation
+        // GET: /Conta/ForgotPasswordConfirmation
         [AllowAnonymous]
         public ActionResult ForgotPasswordConfirmation()
         {
@@ -225,7 +225,7 @@ namespace IdentitySample.Controllers
         }
 
         //
-        // GET: /Account/ResetPassword
+        // GET: /Conta/ResetPassword
         [AllowAnonymous]
         public ActionResult ResetPassword(string code)
         {
@@ -233,7 +233,7 @@ namespace IdentitySample.Controllers
         }
 
         //
-        // POST: /Account/ResetPassword
+        // POST: /Conta/ResetPassword
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -247,19 +247,19 @@ namespace IdentitySample.Controllers
             if (user == null)
             {
                 // Don't reveal that the user does not exist
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
+                return RedirectToAction("ResetPasswordConfirmation", "Conta");
             }
             var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
             if (result.Succeeded)
             {
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
+                return RedirectToAction("ResetPasswordConfirmation", "Conta");
             }
             AddErrors(result);
             return View();
         }
 
         //
-        // GET: /Account/ResetPasswordConfirmation
+        // GET: /Conta/ResetPasswordConfirmation
         [AllowAnonymous]
         public ActionResult ResetPasswordConfirmation()
         {
@@ -267,20 +267,20 @@ namespace IdentitySample.Controllers
         }
 
         //
-        // POST: /Account/ExternalLogin
+        // POST: /Conta/ExternalLogin
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult ExternalLogin(string provider, string returnUrl)
+        public ActionResult AutenticacaoExterna(string provider, string returnUrl)
         {
             // Request a redirect to the external login provider
-            return new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));
+            return new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Conta", new { ReturnUrl = returnUrl }));
         }
 
         //
-        // GET: /Account/SendCode
+        // GET: /Conta/SendCode
         [AllowAnonymous]
-        public async Task<ActionResult> SendCode(string returnUrl)
+        public async Task<ActionResult> EnviarCodigo(string returnUrl)
         {
             var userId = await SignInManager.GetVerifiedUserIdAsync();
             if (userId == null)
@@ -293,11 +293,11 @@ namespace IdentitySample.Controllers
         }
 
         //
-        // POST: /Account/SendCode
+        // POST: /Conta/SendCode
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> SendCode(SendCodeViewModel model)
+        public async Task<ActionResult> EnviarCodigo(SendCodeViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -313,14 +313,14 @@ namespace IdentitySample.Controllers
         }
 
         //
-        // GET: /Account/ExternalLoginCallback
+        // GET: /Conta/ExternalLoginCallback
         [AllowAnonymous]
-        public async Task<ActionResult> ExternalLoginCallback(string returnUrl)
+        public async Task<ActionResult> AutenticacaoExternaCallback(string returnUrl)
         {
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
             if (loginInfo == null)
             {
-                return RedirectToAction("Login");
+                return RedirectToAction("Entrar");
             }
 
             // Sign in the user with this external login provider if the user already has a login
@@ -343,15 +343,15 @@ namespace IdentitySample.Controllers
         }
 
         //
-        // POST: /Account/ExternalLoginConfirmation
+        // POST: /Conta/ExternalLoginConfirmation
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ExternalLoginConfirmation(ExternalLoginConfirmationViewModel model, string returnUrl)
+        public async Task<ActionResult> AutenticacaoExternaConfirmacao(ExternalLoginConfirmationViewModel model, string returnUrl)
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Manage");
+                return RedirectToAction("Indice", "Gerenciamento");
             }
 
             if (ModelState.IsValid)
@@ -381,17 +381,17 @@ namespace IdentitySample.Controllers
         }
 
         //
-        // POST: /Account/LogOff
+        // POST: /Conta/LogOff
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult LogOff()
+        public ActionResult Sair()
         {
             AuthenticationManager.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Indice", "Inicial");
         }
 
         //
-        // GET: /Account/ExternalLoginFailure
+        // GET: /Conta/ExternalLoginFailure
         [AllowAnonymous]
         public ActionResult ExternalLoginFailure()
         {
@@ -424,7 +424,7 @@ namespace IdentitySample.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Indice", "Inicial");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

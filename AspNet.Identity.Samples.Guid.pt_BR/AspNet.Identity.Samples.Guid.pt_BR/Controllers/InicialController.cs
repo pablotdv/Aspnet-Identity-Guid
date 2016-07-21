@@ -2,22 +2,22 @@
 
 namespace IdentitySample.Controllers
 {
-    public class HomeController : Controller
+    public class InicialController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Indice()
         {
             return View();
         }
 
         [Authorize]
-        public ActionResult About()
+        public ActionResult Sobre()
         {
             ViewBag.Message = "Your app description page.";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Contato()
         {
             ViewBag.Message = "Your contact page.";
 

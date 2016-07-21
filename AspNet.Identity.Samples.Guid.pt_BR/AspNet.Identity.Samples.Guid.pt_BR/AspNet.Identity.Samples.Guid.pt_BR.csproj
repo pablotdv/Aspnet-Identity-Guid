@@ -172,6 +172,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\site.css" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-2.2.4.min.map" />
     <None Include="Web.Debug.config">
@@ -234,22 +235,22 @@
     <Content Include="Views\Gerenciamento\Index.cshtml" />
     <Content Include="Views\Gerenciamento\ChangePassword.cshtml" />
     <Content Include="Views\Gerenciamento\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Inicial\Index.cshtml" />
-    <Content Include="Views\Inicial\Contact.cshtml" />
-    <Content Include="Views\Inicial\About.cshtml" />
-    <Content Include="Views\Conta\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Conta\VerifyCode.cshtml" />
-    <Content Include="Views\Conta\SendCode.cshtml" />
-    <Content Include="Views\Conta\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Conta\ResetPassword.cshtml" />
-    <Content Include="Views\Conta\Register.cshtml" />
+    <Content Include="Views\Inicial\Indice.cshtml" />
+    <Content Include="Views\Inicial\Contato.cshtml" />
+    <Content Include="Views\Inicial\Sobre.cshtml" />
+    <Content Include="Views\Conta\_AutenticacoesExternasListaPartial.cshtml" />
+    <Content Include="Views\Conta\VerificarCodigo.cshtml" />
+    <Content Include="Views\Conta\EnviarCodigo.cshtml" />
+    <Content Include="Views\Conta\RedefinirSenhaConfirmacao.cshtml" />
+    <Content Include="Views\Conta\RedefinirSenha.cshtml" />
+    <Content Include="Views\Conta\Registrar.cshtml" />
     <Content Include="Views\Conta\Entrar.cshtml" />
-    <Content Include="Views\Conta\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Conta\ForgotPassword.cshtml" />
-    <Content Include="Views\Conta\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Conta\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Conta\DisplayEmail.cshtml" />
-    <Content Include="Views\Conta\ConfirmEmail.cshtml" />
+    <Content Include="Views\Conta\EsqueceuSenhaConfirmacao.cshtml" />
+    <Content Include="Views\Conta\EsqueceuSenha.cshtml" />
+    <Content Include="Views\Conta\AutenticacaoExternaFalha.cshtml" />
+    <Content Include="Views\Conta\AutenticacaoExternaConfirmacao.cshtml" />
+    <Content Include="Views\Conta\ExibirEmail.cshtml" />
+    <Content Include="Views\Conta\ConfirmarEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -276,21 +277,21 @@
     <Compile Include="ViewModels\Gerenciamento\AdicionarNumeroTelefoneViewModel.cs" />
     <Compile Include="ViewModels\Gerenciamento\AlterarSenhaViewModel.cs" />
     <Compile Include="ViewModels\Gerenciamento\ConfigurarAutenticacaoDuasEtapasViewModel.cs" />
-    <Compile Include="ViewModels\EditUserViewModel.cs" />
+    <Compile Include="ViewModels\AdministracaoUsuarios\EditarUsuarioViewModel.cs" />
     <Compile Include="ViewModels\ExternalLoginConfirmationViewModel.cs" />
-    <Compile Include="ViewModels\ExternalLoginListViewModel.cs" />
+    <Compile Include="ViewModels\Conta\AutenticacaoExternaListaViewModel.cs" />
     <Compile Include="ViewModels\FactorViewModel.cs" />
     <Compile Include="ViewModels\ForgotPasswordViewModel.cs" />
     <Compile Include="ViewModels\ForgotViewModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
-    <Compile Include="ViewModels\EntrarViewModel.cs" />
+    <Compile Include="ViewModels\Conta\EntrarViewModel.cs" />
     <Compile Include="ViewModels\ManageLoginsViewModel.cs" />
-    <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\Conta\RegistrarViewModel.cs" />
     <Compile Include="ViewModels\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\RoleViewModel.cs" />
     <Compile Include="ViewModels\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\SetPasswordViewModel.cs" />
-    <Compile Include="ViewModels\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\Conta\VerificarCodigoViewModel.cs" />
     <Compile Include="ViewModels\VerifyPhoneNumberViewModel.cs" />
   </ItemGroup>
   <ItemGroup />

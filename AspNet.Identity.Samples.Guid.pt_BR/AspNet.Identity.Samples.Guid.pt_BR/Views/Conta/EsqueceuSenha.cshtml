@@ -1,14 +1,14 @@
-﻿@model IdentitySample.Models.ForgotPasswordViewModel
+﻿@model AspNet.Identity.Samples.pt_BR.ViewModels.ForgotPasswordViewModel
 @{
-    ViewBag.Title = "Forgot your password?";
+    ViewBag.Title = "Esqueceu sua senha?";
 }
 
 <h2>@ViewBag.Title.</h2>
 
-@using (Html.BeginForm("ForgotPassword", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("EsqueceuSenha", "Conta", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    <h4>Enter your email.</h4>
+    <h4>Informe seu email.</h4>
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">

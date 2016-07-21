@@ -1,11 +1,11 @@
-﻿@model IdentitySample.Models.VerifyCodeViewModel
+﻿@model AspNet.Identity.Samples.pt_BR.ViewModels.VerificarCodigoViewModel
 @{
     ViewBag.Title = "Enter Verification Code";
 }
 
 <h2>@ViewBag.Title.</h2>
 
-@using (Html.BeginForm("VerifyCode", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
+@using (Html.BeginForm("VerificaCodigo", "Conta", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary("", new { @class = "text-danger" })
     @Html.Hidden("provider", @Model.Provider)

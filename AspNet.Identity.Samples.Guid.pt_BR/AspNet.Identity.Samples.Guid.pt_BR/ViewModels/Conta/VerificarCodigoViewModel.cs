@@ -6,17 +6,17 @@ using System.Web;
 
 namespace AspNet.Identity.Samples.pt_BR.ViewModels
 {
-    public class VerifyCodeViewModel
+    public class VerificarCodigoViewModel
     {
         [Required]
         public string Provider { get; set; }
 
         [Required]
-        [Display(Name = "Code")]
-        public string Code { get; set; }
+        [Display(Name = "Código")]
+        public string Codigo { get; set; }
         public string ReturnUrl { get; set; }
 
-        [Display(Name = "Remember this browser?")]
-        public bool RememberBrowser { get; set; }
+        [Display(Name = "Lembrar este navegador?")]
+        public bool LembrarNavegador { get; set; }
     }
 }

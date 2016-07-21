@@ -88,12 +88,12 @@ namespace IdentitySample.Controllers
         //
         // POST: /Users/Create
         [HttpPost]
-        public async Task<ActionResult> Create(RegisterViewModel userViewModel, params string[] selectedRoles)
+        public async Task<ActionResult> Create(RegistrarViewModel userViewModel, params string[] selectedRoles)
         {
             if (ModelState.IsValid)
             {
                 var user = new Usuario { UserName = userViewModel.Email, Email = userViewModel.Email };
-                var adminresult = await UserManager.CreateAsync(user, userViewModel.Password);
+                var adminresult = await UserManager.CreateAsync(user, userViewModel.Senha);
 
                 //Add User to the selected Roles 
                 if (adminresult.Succeeded)
@@ -116,7 +116,7 @@ namespace IdentitySample.Controllers
                     return View();
 
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("Indice");
             }
             ViewBag.RoleId = new SelectList(RoleManager.Roles, "Name", "Name");
             return View();
@@ -138,7 +138,7 @@ namespace IdentitySample.Controllers
 
             var userRoles = await UserManager.GetRolesAsync(user.Id);
 
-            return View(new EditUserViewModel()
+            return View(new EditarUsuarioViewModel()
             {
                 Id = user.Id,
                 Email = user.Email,
@@ -155,7 +155,7 @@ namespace IdentitySample.Controllers
         // POST: /Users/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Email,Id")] EditUserViewModel editUser, params string[] selectedRole)
+        public async Task<ActionResult> Edit([Bind(Include = "Email,Id")] EditarUsuarioViewModel editUser, params string[] selectedRole)
         {
             if (ModelState.IsValid)
             {
@@ -186,7 +186,7 @@ namespace IdentitySample.Controllers
                     ModelState.AddModelError("", result.Errors.First());
                     return View();
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("Indice");
             }
             ModelState.AddModelError("", "Something failed.");
             return View();
@@ -232,7 +232,7 @@ namespace IdentitySample.Controllers
                     ModelState.AddModelError("", result.Errors.First());
                     return View();
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("Indice");
             }
             return View();
         }

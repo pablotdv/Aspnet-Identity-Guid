@@ -1,15 +1,15 @@
-﻿@model IdentitySample.Models.SendCodeViewModel
+﻿@model AspNet.Identity.Samples.pt_BR.ViewModels.SendCodeViewModel
 @{
-    ViewBag.Title = "Send Verification Code";
+    ViewBag.Title = "Enviar código de verificação";
 }
 
 <h2>@ViewBag.Title.</h2>
 
-@using (Html.BeginForm("SendCode", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
+@using (Html.BeginForm("EnviarCodigo", "Conta", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
     @Html.AntiForgeryToken()
     <div class="row">
         <div class="col-md-8">
-            Two Factor Authentication Provider:
+            Provider de autenticação em duas etapas:
             @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers)
             <input type="submit" value="Submit" class="btn btn-default" />
         </div>

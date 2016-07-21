@@ -134,7 +134,7 @@ namespace IdentitySample.Controllers
         {
             var rememberBrowserIdentity = AuthenticationManager.CreateTwoFactorRememberBrowserIdentity(User.Identity.GetUserId());
             AuthenticationManager.SignIn(new AuthenticationProperties { IsPersistent = true }, rememberBrowserIdentity);
-            return RedirectToAction("Index", "Manage");
+            return RedirectToAction("Indice", "Manage");
         }
 
         //
@@ -143,7 +143,7 @@ namespace IdentitySample.Controllers
         public ActionResult ForgetBrowser()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
-            return RedirectToAction("Index", "Manage");
+            return RedirectToAction("Indice", "Manage");
         }
 
         //
@@ -157,7 +157,7 @@ namespace IdentitySample.Controllers
             {
                 await SignInAsync(user, isPersistent: false);
             }
-            return RedirectToAction("Index", "Manage");
+            return RedirectToAction("Indice", "Manage");
         }
 
         //
@@ -171,7 +171,7 @@ namespace IdentitySample.Controllers
             {
                 await SignInAsync(user, isPersistent: false);
             }
-            return RedirectToAction("Index", "Manage");
+            return RedirectToAction("Indice", "Manage");
         }
 
         private Guid GetUserId()
@@ -208,7 +208,7 @@ namespace IdentitySample.Controllers
                 {
                     await SignInAsync(user, isPersistent: false);
                 }
-                return RedirectToAction("Index", new { Message = ManageMessageId.AddPhoneSuccess });
+                return RedirectToAction("Indice", new { Message = ManageMessageId.AddPhoneSuccess });
             }
             // If we got this far, something failed, redisplay form
             ModelState.AddModelError("", "Failed to verify phone");
@@ -222,14 +222,14 @@ namespace IdentitySample.Controllers
             var result = await UserManager.SetPhoneNumberAsync(GetUserId(), null);
             if (!result.Succeeded)
             {
-                return RedirectToAction("Index", new { Message = ManageMessageId.Error });
+                return RedirectToAction("Indice", new { Message = ManageMessageId.Error });
             }
             var user = await UserManager.FindByIdAsync(GetUserId());
             if (user != null)
             {
                 await SignInAsync(user, isPersistent: false);
             }
-            return RedirectToAction("Index", new { Message = ManageMessageId.RemovePhoneSuccess });
+            return RedirectToAction("Indice", new { Message = ManageMessageId.RemovePhoneSuccess });
         }
 
         //
@@ -257,7 +257,7 @@ namespace IdentitySample.Controllers
                 {
                     await SignInAsync(user, isPersistent: false);
                 }
-                return RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
+                return RedirectToAction("Indice", new { Message = ManageMessageId.ChangePasswordSuccess });
             }
             AddErrors(result);
             return View(model);
@@ -286,7 +286,7 @@ namespace IdentitySample.Controllers
                     {
                         await SignInAsync(user, isPersistent: false);
                     }
-                    return RedirectToAction("Index", new { Message = ManageMessageId.SetPasswordSuccess });
+                    return RedirectToAction("Indice", new { Message = ManageMessageId.SetPasswordSuccess });
                 }
                 AddErrors(result);
             }

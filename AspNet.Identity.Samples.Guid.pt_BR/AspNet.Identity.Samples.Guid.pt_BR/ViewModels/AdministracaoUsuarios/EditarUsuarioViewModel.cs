@@ -3,22 +3,19 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace AspNet.Identity.Samples.pt_BR.ViewModels
 {
-    public class EntrarViewModel
+    public class EditarUsuarioViewModel
     {
-        [Required]
+        public Guid Id { get; set; }
+
+        [Required(AllowEmptyStrings = false)]
         [Display(Name = "Email")]
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
-        [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
-
-        [Display(Name = "Remember me?")]
-        public bool RememberMe { get; set; }
+        public IEnumerable<SelectListItem> RolesList { get; set; }
     }
 }

@@ -108,7 +108,7 @@ namespace IdentitySample.Controllers
                     ModelState.AddModelError("", roleresult.Errors.First());
                     return View();
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("Indice");
             }
             return View();
         }
@@ -142,7 +142,7 @@ namespace IdentitySample.Controllers
                 var role = await RoleManager.FindByIdAsync(roleModel.Id);
                 role.Name = roleModel.Name;
                 await RoleManager.UpdateAsync(role);
-                return RedirectToAction("Index");
+                return RedirectToAction("Indice");
             }
             return View();
         }
@@ -194,7 +194,7 @@ namespace IdentitySample.Controllers
                     ModelState.AddModelError("", result.Errors.First());
                     return View();
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("Indice");
             }
             return View();
         }
