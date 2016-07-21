@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Microsoft.AspNet.Identity.Guid</id>
-    <version>0.1.2</version>
+    <version>0.1.4</version>
     <title>Microsoft.AspNet.Identity.Guid</title>
     <authors>pablotdv</authors>
     <owners>pablotdv</owners>
@@ -10,8 +10,8 @@
     <projectUrl>https://github.com/pablotdv/Aspnet-Identity-Guid</projectUrl>
     <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Is a Sample of Microsoft AspNet Identity using Guid</description>
-    <releaseNotes>Is first release</releaseNotes>
+    <description>It's a Sample of Microsoft AspNet Identity using Guid</description>
+    <releaseNotes>It's first release</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>aspnet identity sample guid</tags>
 
@@ -53,9 +53,11 @@
     <file src="..\Aspnet.Identity.Samples.Guid\App_Start\*.*" target="content\App_Start" />
     <file src="..\Aspnet.Identity.Samples.Guid\Controllers\*.*" target="content\Controllers" />
     <file src="..\Aspnet.Identity.Samples.Guid\Models\*.*" target="content\Models" />
-    <file src="..\Aspnet.Identity.Samples.Guid\Views\*.*" target="content\Views" />
+    <file src="..\Aspnet.Identity.Samples.Guid\Views\**\*.*" target="content\Views" />
     <file src="..\Aspnet.Identity.Samples.Guid\Global.asax" target="content\Global.asax" />
+    <file src="..\Aspnet.Identity.Samples.Guid\Global.asax.cs" target="content\Global.asax.cs" />    
     <file src="..\Aspnet.Identity.Samples.Guid\Startup.cs" target="content\Startup.cs" />
+    <file src="content\web.config.transform" target="content"></file>
   </files>
 
   
