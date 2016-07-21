@@ -6,10 +6,11 @@ using System.Web;
 
 namespace AspNet.Identity.Samples.pt_BR.ViewModels
 {
-    public class ExternalLoginConfirmationViewModel
+    public class AddPhoneNumberViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+        [Phone]
+        [Display(Name = "Phone Number")]
+        public string Number { get; set; }
     }
 }

@@ -5,8 +5,8 @@ using System.Web;
 
 namespace AspNet.Identity.Samples.pt_BR.ViewModels
 {
-    public class ExternalLoginListViewModel
+    public class FactorViewModel
     {
-        public string ReturnUrl { get; set; }
+        public string Purpose { get; set; }
     }
 }

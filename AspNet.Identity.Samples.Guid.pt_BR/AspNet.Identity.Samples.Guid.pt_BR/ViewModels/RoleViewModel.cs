@@ -6,10 +6,11 @@ using System.Web;
 
 namespace AspNet.Identity.Samples.pt_BR.ViewModels
 {
-    public class ExternalLoginConfirmationViewModel
+    public class RoleViewModel
     {
-        [Required]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+        public Guid Id { get; set; }
+        [Required(AllowEmptyStrings = false)]
+        [Display(Name = "RoleName")]
+        public string Name { get; set; }
     }
 }

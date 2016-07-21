@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Collections.Generic;
 using System;
+using AspNet.Identity.Samples.pt_BR.ViewModels;
 
 namespace IdentitySample.Controllers
 {

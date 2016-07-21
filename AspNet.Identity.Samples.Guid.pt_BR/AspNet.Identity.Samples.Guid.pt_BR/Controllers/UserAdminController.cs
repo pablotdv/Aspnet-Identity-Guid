@@ -10,7 +10,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using AspNet.Identity.Samples.Guid.pt_BR.ViewModels;
+using AspNet.Identity.Samples.pt_BR.ViewModels;
 
 namespace IdentitySample.Controllers
 {

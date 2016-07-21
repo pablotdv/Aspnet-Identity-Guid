@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace AspNet.Identity.Samples.Guid.pt_BR.ViewModels
+namespace AspNet.Identity.Samples.pt_BR.ViewModels
 {
     public class ForgotPasswordViewModel
     {
