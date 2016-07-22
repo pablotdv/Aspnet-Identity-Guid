@@ -210,7 +210,7 @@ namespace IdentitySample.Controllers
 
         //
         // POST: /Users/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("Excluir")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ExcluirConfirmacao(Guid id)
         {

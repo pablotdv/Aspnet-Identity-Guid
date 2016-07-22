@@ -1,13 +1,12 @@
-﻿@model IdentitySample.Models.ApplicationRole
-
+﻿@model AspNet.Identity.Samples.pt_BR.Models.Grupo
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Excluir";
 }
 
-<h2>Delete.</h2>
+<h2>Excluir.</h2>
 
-<h3>Are you sure you want to delete this Role? </h3>
-<p>Deleting this Role will remove all users from this role. It will not delete the users.</p>
+<h3>Tem certeza de que deseja excluir este grupo? </h3>
+<p>Excluindo este grupo irá remover todos os usuários do grupo. Não excluindo os usuários.</p>
 <div>
     <h4>Grupo.</h4>
     <hr />
@@ -25,7 +24,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
             @Html.ActionLink("Voltar para Listagem", "Indice")
         </div>
     }

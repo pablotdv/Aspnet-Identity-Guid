@@ -1,4 +1,5 @@
 ﻿using AspNet.Identity.Samples.pt_BR.Models;
+using IdentitySample.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;

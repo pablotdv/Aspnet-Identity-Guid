@@ -1,4 +1,4 @@
-﻿@model IEnumerable<IdentitySample.Models.ApplicationRole>
+﻿@model IEnumerable<AspNet.Identity.Samples.pt_BR.Models.Grupo>
 
 @{
     ViewBag.Title = "Indice";
@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Criar")
+    @Html.ActionLink("Criar novo", "Criar")
 </p>
 <table class="table">
     <tr>
@@ -26,9 +26,9 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
                 @Html.ActionLink("Detalhes", "Detalhes", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @Html.ActionLink("Excluir", "Excluir", new { id = item.Id })
             </td>
         </tr>
     }

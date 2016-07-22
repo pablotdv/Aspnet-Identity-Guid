@@ -6,11 +6,11 @@ using System.Web;
 
 namespace AspNet.Identity.Samples.pt_BR.ViewModels
 {
-    public class RoleViewModel
+    public class GrupoViewModel
     {
         public Guid Id { get; set; }
         [Required(AllowEmptyStrings = false)]
-        [Display(Name = "RoleName")]
-        public string Name { get; set; }
+        [Display(Name = "Grupo nome")]
+        public string Nome { get; set; }
     }
 }

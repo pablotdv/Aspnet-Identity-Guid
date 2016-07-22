@@ -288,7 +288,7 @@
     <Compile Include="ViewModels\ManageLoginsViewModel.cs" />
     <Compile Include="ViewModels\Conta\RegistrarViewModel.cs" />
     <Compile Include="ViewModels\ResetPasswordViewModel.cs" />
-    <Compile Include="ViewModels\RoleViewModel.cs" />
+    <Compile Include="ViewModels\AdministracaoGrupos\GrupoViewModel.cs" />
     <Compile Include="ViewModels\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Conta\VerificarCodigoViewModel.cs" />

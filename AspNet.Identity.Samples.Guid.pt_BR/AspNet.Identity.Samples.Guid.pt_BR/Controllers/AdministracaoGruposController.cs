@@ -97,11 +97,11 @@ namespace IdentitySample.Controllers
         //
         // POST: /Roles/Create
         [HttpPost]
-        public async Task<ActionResult> Criar(RoleViewModel roleViewModel)
+        public async Task<ActionResult> Criar(GrupoViewModel roleViewModel)
         {
             if (ModelState.IsValid)
             {
-                var role = new Grupo() { Name = roleViewModel.Name };
+                var role = new Grupo() { Name = roleViewModel.Nome };
                 var roleresult = await RoleManager.CreateAsync(role);
                 if (!roleresult.Succeeded)
                 {
@@ -126,7 +126,7 @@ namespace IdentitySample.Controllers
             {
                 return HttpNotFound();
             }
-            RoleViewModel roleModel = new RoleViewModel { Id = role.Id, Name = role.Name };
+            GrupoViewModel roleModel = new GrupoViewModel { Id = role.Id, Nome = role.Name };
             return View(roleModel);
         }
 
@@ -135,12 +135,12 @@ namespace IdentitySample.Controllers
         [HttpPost]
 
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Editar([Bind(Include = "Name,Id")] RoleViewModel roleModel)
+        public async Task<ActionResult> Editar([Bind(Include = "Name,Id")] GrupoViewModel roleModel)
         {
             if (ModelState.IsValid)
             {
                 var role = await RoleManager.FindByIdAsync(roleModel.Id);
-                role.Name = roleModel.Name;
+                role.Name = roleModel.Nome;
                 await RoleManager.UpdateAsync(role);
                 return RedirectToAction("Indice");
             }
@@ -165,7 +165,7 @@ namespace IdentitySample.Controllers
 
         //
         // POST: /Roles/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("Excluir")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ExcluirConfirmacao(Guid id, string deleteUser)
         {
