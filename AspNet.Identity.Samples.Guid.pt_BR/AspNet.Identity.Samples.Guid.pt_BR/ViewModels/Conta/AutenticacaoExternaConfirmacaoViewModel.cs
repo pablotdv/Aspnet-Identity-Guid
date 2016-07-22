@@ -6,7 +6,7 @@ using System.Web;
 
 namespace AspNet.Identity.Samples.pt_BR.ViewModels
 {
-    public class ExternalLoginConfirmationViewModel
+    public class AutenticacaoExternaConfirmacaoViewModel
     {
         [Required]
         [Display(Name = "Email")]

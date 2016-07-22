@@ -338,7 +338,7 @@ namespace IdentitySample.Controllers
                     // If the user does not have an account, then prompt the user to create an account
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
-                    return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
+                    return View("ExternalLoginConfirmation", new AutenticacaoExternaConfirmacaoViewModel { Email = loginInfo.Email });
             }
         }
 
@@ -347,7 +347,7 @@ namespace IdentitySample.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> AutenticacaoExternaConfirmacao(ExternalLoginConfirmationViewModel model, string returnUrl)
+        public async Task<ActionResult> AutenticacaoExternaConfirmacao(AutenticacaoExternaConfirmacaoViewModel model, string returnUrl)
         {
             if (User.Identity.IsAuthenticated)
             {

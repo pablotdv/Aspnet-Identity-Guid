@@ -278,7 +278,7 @@
     <Compile Include="ViewModels\Gerenciamento\AlterarSenhaViewModel.cs" />
     <Compile Include="ViewModels\Gerenciamento\ConfigurarAutenticacaoDuasEtapasViewModel.cs" />
     <Compile Include="ViewModels\AdministracaoUsuarios\EditarUsuarioViewModel.cs" />
-    <Compile Include="ViewModels\ExternalLoginConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\Conta\AutenticacaoExternaConfirmacaoViewModel.cs" />
     <Compile Include="ViewModels\Conta\AutenticacaoExternaListaViewModel.cs" />
     <Compile Include="ViewModels\FactorViewModel.cs" />
     <Compile Include="ViewModels\ForgotPasswordViewModel.cs" />
