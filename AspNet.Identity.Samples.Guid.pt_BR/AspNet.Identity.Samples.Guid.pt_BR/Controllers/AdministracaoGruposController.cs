@@ -15,13 +15,13 @@ using AspNet.Identity.Samples.pt_BR.Models;
 namespace IdentitySample.Controllers
 {
     [Authorize(Roles = "Admin")]
-    public class RolesAdminController : Controller
+    public class AdministracaoGruposController : Controller
     {
-        public RolesAdminController()
+        public AdministracaoGruposController()
         {
         }
 
-        public RolesAdminController(ApplicationUserManager userManager,
+        public AdministracaoGruposController(ApplicationUserManager userManager,
             ApplicationRoleManager roleManager)
         {
             UserManager = userManager;
@@ -56,14 +56,14 @@ namespace IdentitySample.Controllers
 
         //
         // GET: /Roles/
-        public ActionResult Index()
+        public ActionResult Indice()
         {
             return View(RoleManager.Roles);
         }
 
         //
         // GET: /Roles/Details/5
-        public async Task<ActionResult> Details(Guid id)
+        public async Task<ActionResult> Detalhes(Guid id)
         {
             if (id == null)
             {
@@ -89,7 +89,7 @@ namespace IdentitySample.Controllers
 
         //
         // GET: /Roles/Create
-        public ActionResult Create()
+        public ActionResult Criar()
         {
             return View();
         }
@@ -97,7 +97,7 @@ namespace IdentitySample.Controllers
         //
         // POST: /Roles/Create
         [HttpPost]
-        public async Task<ActionResult> Create(RoleViewModel roleViewModel)
+        public async Task<ActionResult> Criar(RoleViewModel roleViewModel)
         {
             if (ModelState.IsValid)
             {
@@ -115,7 +115,7 @@ namespace IdentitySample.Controllers
 
         //
         // GET: /Roles/Edit/Admin
-        public async Task<ActionResult> Edit(Guid id)
+        public async Task<ActionResult> Editar(Guid id)
         {
             if (id == null)
             {
@@ -135,7 +135,7 @@ namespace IdentitySample.Controllers
         [HttpPost]
 
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Name,Id")] RoleViewModel roleModel)
+        public async Task<ActionResult> Editar([Bind(Include = "Name,Id")] RoleViewModel roleModel)
         {
             if (ModelState.IsValid)
             {
@@ -149,7 +149,7 @@ namespace IdentitySample.Controllers
 
         //
         // GET: /Roles/Delete/5
-        public async Task<ActionResult> Delete(Guid id)
+        public async Task<ActionResult> Excluir(Guid id)
         {
             if (id == null)
             {
@@ -167,7 +167,7 @@ namespace IdentitySample.Controllers
         // POST: /Roles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(Guid id, string deleteUser)
+        public async Task<ActionResult> ExcluirConfirmacao(Guid id, string deleteUser)
         {
             if (ModelState.IsValid)
             {

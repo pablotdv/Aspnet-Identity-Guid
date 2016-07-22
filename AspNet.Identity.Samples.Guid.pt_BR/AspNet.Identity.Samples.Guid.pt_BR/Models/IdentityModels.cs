@@ -25,7 +25,7 @@ namespace IdentitySample.Models
             Database.SetInitializer<ApplicationDbContext>(new ApplicationDbInitializer());
         }
 
-        public static ApplicationDbContext Create()
+        public static ApplicationDbContext Criar()
         {
             return new ApplicationDbContext();
         }

@@ -56,14 +56,14 @@ namespace IdentitySample.Controllers
 
         //
         // GET: /Users/
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Indice()
         {
             return View(await UserManager.Users.ToListAsync());
         }
 
         //
         // GET: /Users/Details/5
-        public async Task<ActionResult> Details(Guid id)
+        public async Task<ActionResult> Detalhes(Guid id)
         {
             if (id == null)
             {
@@ -78,7 +78,7 @@ namespace IdentitySample.Controllers
 
         //
         // GET: /Users/Create
-        public async Task<ActionResult> Create()
+        public async Task<ActionResult> Criar()
         {
             //Get the list of Roles
             ViewBag.RoleId = new SelectList(await RoleManager.Roles.ToListAsync(), "Name", "Name");
@@ -88,7 +88,7 @@ namespace IdentitySample.Controllers
         //
         // POST: /Users/Create
         [HttpPost]
-        public async Task<ActionResult> Create(RegistrarViewModel userViewModel, params string[] selectedRoles)
+        public async Task<ActionResult> Criar(RegistrarViewModel userViewModel, params string[] selectedRoles)
         {
             if (ModelState.IsValid)
             {
@@ -124,7 +124,7 @@ namespace IdentitySample.Controllers
 
         //
         // GET: /Users/Edit/1
-        public async Task<ActionResult> Edit(Guid id)
+        public async Task<ActionResult> Editar(Guid id)
         {
             if (id == null)
             {
@@ -155,7 +155,7 @@ namespace IdentitySample.Controllers
         // POST: /Users/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Email,Id")] EditarUsuarioViewModel editUser, params string[] selectedRole)
+        public async Task<ActionResult> Editar([Bind(Include = "Email,Id")] EditarUsuarioViewModel editUser, params string[] selectedRole)
         {
             if (ModelState.IsValid)
             {
@@ -194,7 +194,7 @@ namespace IdentitySample.Controllers
 
         //
         // GET: /Users/Delete/5
-        public async Task<ActionResult> Delete(Guid id)
+        public async Task<ActionResult> Excluir(Guid id)
         {
             if (id == null)
             {
@@ -212,7 +212,7 @@ namespace IdentitySample.Controllers
         // POST: /Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(Guid id)
+        public async Task<ActionResult> ExcluirConfirmacao(Guid id)
         {
             if (ModelState.IsValid)
             {
