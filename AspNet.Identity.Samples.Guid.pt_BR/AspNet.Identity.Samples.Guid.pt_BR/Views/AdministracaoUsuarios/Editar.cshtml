@@ -1,4 +1,4 @@
-﻿@model IdentitySample.Models.EditUserViewModel
+﻿@model AspNet.Identity.Samples.pt_BR.ViewModels.EditarUsuarioViewModel
 
 @{
     ViewBag.Title = "Editar";
@@ -11,7 +11,7 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Edit User Form.</h4>
+        <h4>Formulário de edição de usuário.</h4>
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.Id)

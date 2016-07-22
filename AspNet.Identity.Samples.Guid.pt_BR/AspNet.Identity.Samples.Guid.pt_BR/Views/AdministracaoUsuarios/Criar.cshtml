@@ -1,4 +1,4 @@
-﻿@model IdentitySample.Models.RegisterViewModel
+﻿@model  AspNet.Identity.Samples.pt_BR.ViewModels.RegistrarViewModel
 @{
     ViewBag.Title = "Criar";
 }
@@ -18,20 +18,20 @@
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.Senha, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            @Html.PasswordFor(m => m.Senha, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.SenhaConfirmacao, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+            @Html.PasswordFor(m => m.SenhaConfirmacao, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
         <label class="col-md-2 control-label">
-            Select User Role
+            Selecione um grupo pro usuário
         </label>
         <div class="col-md-10">
             @foreach (var item in (SelectList)ViewBag.RoleId)
