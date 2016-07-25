@@ -1,4 +1,4 @@
-﻿@model AspNet.Identity.Samples.pt_BR.ViewModels.EntrarViewModel
+﻿@model AspNet.Identity.Samples.Common.ViewModels.EntrarViewModel
 
 @{
     ViewBag.Title = "Entrar";
@@ -54,7 +54,7 @@
     </div>
     <div class="col-md-4">
         <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new AspNet.Identity.Samples.pt_BR.ViewModels.ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+            @Html.Partial("_AutenticacoesExternasListaPartial", new AspNet.Identity.Samples.Common.ViewModels.AutenticacaoExternaListaViewModel { ReturnUrl = ViewBag.ReturnUrl })
         </section>
     </div>
 </div>

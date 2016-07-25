@@ -1,6 +1,6 @@
 ﻿using Owin;
 
-namespace IdentitySample
+namespace AspNet.Identity.Samples.Common
 {
     public partial class Startup
     {

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace AspNet.Identity.Samples.pt_BR.ViewModels
+namespace AspNet.Identity.Samples.Common.ViewModels
 {
     public class AlterarSenhaViewModel
     {

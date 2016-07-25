@@ -1,6 +1,5 @@
-﻿using AspNet.Identity.Samples.pt_BR.Models;
-using AspNet.Identity.Samples.pt_BR.ViewModels;
-using IdentitySample.Models;
+﻿using AspNet.Identity.Samples.Common.Models;
+using AspNet.Identity.Samples.Common.ViewModels;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -10,7 +9,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace IdentitySample.Controllers
+namespace AspNet.Identity.Samples.Common.Controllers
 {
     [Authorize]
     public class GerenciamentoController : Controller

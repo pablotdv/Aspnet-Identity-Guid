@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AspNet.Identity.Samples.pt_BR</RootNamespace>
-    <AssemblyName>AspNet.Identity.Samples.pt_BR</AssemblyName>
+    <RootNamespace>AspNet.Identity.Samples.Common</RootNamespace>
+    <AssemblyName>AspNet.Identity.Samples.Common</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -120,6 +120,14 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorGenerator.Mvc.2.4.2\lib\net40\RazorGenerator.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RazorGenerator.Templating, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorGenerator.Templating.2.3.11\lib\portable-Profile328\RazorGenerator.Templating.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Web.DynamicData" />
@@ -166,28 +174,30 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.1.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\site.css" />
-    <Content Include="packages.config" />
-    <Content Include="Scripts\jquery-2.2.4.min.map" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="packages.config" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-2.2.4.min.map" />
+    <Content Include="SampleTemplate.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SampleTemplate.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -196,12 +206,23 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Scripts\jquery-3.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.0.js" />
+    <Content Include="Scripts\jquery-3.1.0.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.0.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-2.2.4.js" />
-    <Content Include="Scripts\jquery-2.2.4.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -215,47 +236,135 @@
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\AdministracaoUsuarios\Indice.cshtml" />
-    <Content Include="Views\AdministracaoUsuarios\Editar.cshtml" />
-    <Content Include="Views\AdministracaoUsuarios\Detalhes.cshtml" />
-    <Content Include="Views\AdministracaoUsuarios\Excluir.cshtml" />
-    <Content Include="Views\AdministracaoUsuarios\Criar.cshtml" />
+    <Content Include="Views\AdministracaoUsuarios\Indice.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Indice.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\AdministracaoUsuarios\Editar.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Editar.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\AdministracaoUsuarios\Detalhes.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Detalhes.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\AdministracaoUsuarios\Excluir.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Excluir.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\AdministracaoUsuarios\Criar.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Criar.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\AdministracaoGrupos\Indice.cshtml" />
-    <Content Include="Views\AdministracaoGrupos\Editar.cshtml" />
-    <Content Include="Views\AdministracaoGrupos\Detalhes.cshtml" />
-    <Content Include="Views\AdministracaoGrupos\Excluir.cshtml" />
-    <Content Include="Views\AdministracaoGrupos\Criar.cshtml" />
-    <Content Include="Views\Gerenciamento\VerifyPhoneNumber.cshtml" />
-    <Content Include="Views\Gerenciamento\SetPassword.cshtml" />
-    <Content Include="Views\Gerenciamento\ManageLogins.cshtml" />
-    <Content Include="Views\Gerenciamento\Index.cshtml" />
-    <Content Include="Views\Gerenciamento\ChangePassword.cshtml" />
-    <Content Include="Views\Gerenciamento\AddPhoneNumber.cshtml" />
+    <Content Include="Views\AdministracaoGrupos\Indice.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Indice.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\AdministracaoGrupos\Editar.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Editar.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\AdministracaoGrupos\Detalhes.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Detalhes.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\AdministracaoGrupos\Excluir.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Excluir.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\AdministracaoGrupos\Criar.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Criar.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Gerenciamento\VerifyPhoneNumber.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>VerifyPhoneNumber.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Gerenciamento\SetPassword.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SetPassword.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Gerenciamento\ManageLogins.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ManageLogins.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Gerenciamento\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Gerenciamento\ChangePassword.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ChangePassword.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Gerenciamento\AddPhoneNumber.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>AddPhoneNumber.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="Views\Inicial\Indice.cshtml" />
     <Content Include="Views\Inicial\Contato.cshtml" />
     <Content Include="Views\Inicial\Sobre.cshtml" />
-    <Content Include="Views\Conta\_AutenticacoesExternasListaPartial.cshtml" />
-    <Content Include="Views\Conta\VerificarCodigo.cshtml" />
-    <Content Include="Views\Conta\EnviarCodigo.cshtml" />
-    <Content Include="Views\Conta\RedefinirSenhaConfirmacao.cshtml" />
-    <Content Include="Views\Conta\RedefinirSenha.cshtml" />
-    <Content Include="Views\Conta\Registrar.cshtml" />
-    <Content Include="Views\Conta\Entrar.cshtml" />
-    <Content Include="Views\Conta\EsqueceuSenhaConfirmacao.cshtml" />
-    <Content Include="Views\Conta\EsqueceuSenha.cshtml" />
-    <Content Include="Views\Conta\AutenticacaoExternaFalha.cshtml" />
-    <Content Include="Views\Conta\AutenticacaoExternaConfirmacao.cshtml" />
-    <Content Include="Views\Conta\ExibirEmail.cshtml" />
-    <Content Include="Views\Conta\ConfirmarEmail.cshtml" />
+    <Content Include="Views\Conta\_AutenticacoesExternasListaPartial.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_AutenticacoesExternasListaPartial.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Conta\VerificarCodigo.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>VerificarCodigo.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Conta\EnviarCodigo.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>EnviarCodigo.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Conta\RedefinirSenhaConfirmacao.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>RedefinirSenhaConfirmacao.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Conta\RedefinirSenha.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>RedefinirSenha.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Conta\Registrar.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Registrar.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Conta\Entrar.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Entrar.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Conta\EsqueceuSenhaConfirmacao.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>EsqueceuSenhaConfirmacao.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Conta\EsqueceuSenha.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>EsqueceuSenha.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Conta\AutenticacaoExternaFalha.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>AutenticacaoExternaFalha.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Conta\AutenticacaoExternaConfirmacao.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>AutenticacaoExternaConfirmacao.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Conta\ExibirEmail.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ExibirEmail.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Conta\ConfirmarEmail.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ConfirmarEmail.generated.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\ContaController.cs" />
@@ -273,6 +382,11 @@
     <Compile Include="Models\UsuarioGrupo.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleTemplate.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleTemplate.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Gerenciamento\AdicionarNumeroTelefoneViewModel.cs" />
     <Compile Include="ViewModels\Gerenciamento\AlterarSenhaViewModel.cs" />
@@ -293,6 +407,151 @@
     <Compile Include="ViewModels\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Conta\VerificarCodigoViewModel.cs" />
     <Compile Include="ViewModels\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="Views\AdministracaoGrupos\Criar.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Criar.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdministracaoGrupos\Detalhes.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Detalhes.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdministracaoGrupos\Editar.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Editar.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdministracaoGrupos\Excluir.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Excluir.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdministracaoGrupos\Indice.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Indice.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdministracaoUsuarios\Criar.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Criar.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdministracaoUsuarios\Detalhes.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Detalhes.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdministracaoUsuarios\Editar.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Editar.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdministracaoUsuarios\Excluir.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Excluir.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdministracaoUsuarios\Indice.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Indice.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Conta\AutenticacaoExternaConfirmacao.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AutenticacaoExternaConfirmacao.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Conta\AutenticacaoExternaFalha.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AutenticacaoExternaFalha.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Conta\ConfirmarEmail.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfirmarEmail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Conta\Entrar.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entrar.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Conta\EnviarCodigo.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnviarCodigo.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Conta\EsqueceuSenha.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EsqueceuSenha.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Conta\EsqueceuSenhaConfirmacao.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EsqueceuSenhaConfirmacao.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Conta\ExibirEmail.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExibirEmail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Conta\RedefinirSenha.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RedefinirSenha.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Conta\RedefinirSenhaConfirmacao.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RedefinirSenhaConfirmacao.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Conta\Registrar.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Registrar.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Conta\VerificarCodigo.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VerificarCodigo.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Conta\_AutenticacoesExternasListaPartial.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_AutenticacoesExternasListaPartial.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Gerenciamento\AddPhoneNumber.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddPhoneNumber.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Gerenciamento\ChangePassword.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChangePassword.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Gerenciamento\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Gerenciamento\ManageLogins.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManageLogins.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Gerenciamento\SetPassword.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SetPassword.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Gerenciamento\VerifyPhoneNumber.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VerifyPhoneNumber.cshtml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
@@ -310,7 +569,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>7081</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7081/</IISUrl>
+          <IISUrl>http://localhost:7082/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

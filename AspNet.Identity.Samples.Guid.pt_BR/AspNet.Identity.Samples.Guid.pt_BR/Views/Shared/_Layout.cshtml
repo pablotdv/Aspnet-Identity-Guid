@@ -25,7 +25,7 @@
                     <li>@Html.ActionLink("Sobre", "Sobre", "Inicial")</li>
                     <li>@Html.ActionLink("Contato", "Contato", "Inicial")</li>
 
-                    @if (Request.IsAuthenticated && User.IsInRole("Admin")) {
+                    @if (Request.IsAuthenticated && User.IsInRole("Administradores")) {
                         <li>@Html.ActionLink("Grupos", "Indice", "AdministracaoGrupos")</li>
                         <li>@Html.ActionLink("Usuários", "Indice", "AdministracaoUsuarios")</li>
                     }

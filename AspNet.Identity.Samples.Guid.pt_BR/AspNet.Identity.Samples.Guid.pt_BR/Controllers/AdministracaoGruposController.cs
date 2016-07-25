@@ -1,7 +1,6 @@
-﻿using IdentitySample.Models;
+﻿using AspNet.Identity.Samples.Common.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using Microsoft.AspNet.Identity.EntityFramework;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -9,12 +8,11 @@ using System.Web;
 using System.Web.Mvc;
 using System.Collections.Generic;
 using System;
-using AspNet.Identity.Samples.pt_BR.ViewModels;
-using AspNet.Identity.Samples.pt_BR.Models;
+using AspNet.Identity.Samples.Common.ViewModels;
 
-namespace IdentitySample.Controllers
+namespace AspNet.Identity.Samples.Common.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Administradores")]
     public class AdministracaoGruposController : Controller
     {
         public AdministracaoGruposController()

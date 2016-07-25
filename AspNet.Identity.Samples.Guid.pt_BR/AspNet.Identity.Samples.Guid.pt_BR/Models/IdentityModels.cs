@@ -1,16 +1,11 @@
-﻿using AspNet.Identity.Samples.pt_BR.Models;
-using IdentitySample.Models;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Data.Entity;
-using System.Security.Claims;
-using System.Threading.Tasks;
 
-namespace AspNet.Identity.Samples.pt_BR.Models
+namespace AspNet.Identity.Samples.Common.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
-    
+
 
     public class ApplicationDbContext : IdentityDbContext<Usuario, Grupo, Guid, UsuarioLogin, UsuarioGrupo, UsuarioIdentificacao>
     {

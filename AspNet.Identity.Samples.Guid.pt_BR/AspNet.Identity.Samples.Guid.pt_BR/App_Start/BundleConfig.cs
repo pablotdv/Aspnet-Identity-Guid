@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace IdentitySample
+namespace AspNet.Identity.Samples.Common
 {
     public class BundleConfig
     {

@@ -1,18 +1,15 @@
-﻿using System.Linq;
-using System.Security.Claims;
+﻿using System.Security.Claims;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Web;
-using AspNet.Identity.Samples.pt_BR.Models;
 
-namespace IdentitySample.Models
+namespace AspNet.Identity.Samples.Common.Models
 {
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
 
@@ -115,9 +112,9 @@ namespace IdentitySample.Models
         public static void InitializeIdentityForEF(ApplicationDbContext db) {
             var userManager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var roleManager = HttpContext.Current.GetOwinContext().Get<ApplicationRoleManager>();
-            const string name = "admin@example.com";
+            const string name = "administrador@exemplo.com.br";
             const string password = "Admin@123456";
-            const string roleName = "Admin";
+            const string roleName = "Administradores";
 
             //Create Role Admin if it does not exist
             var role = roleManager.FindByName(roleName);

@@ -1,21 +1,17 @@
-﻿using IdentitySample.Models;
-using Microsoft.AspNet.Identity;
+﻿using AspNet.Identity.Samples.Common.Models;
 using Microsoft.AspNet.Identity.Owin;
-using Microsoft.AspNet.Identity.EntityFramework;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using AspNet.Identity.Samples.pt_BR.ViewModels;
-using AspNet.Identity.Samples.pt_BR.Models;
+using AspNet.Identity.Samples.Common.ViewModels;
 
-namespace IdentitySample.Controllers
+namespace AspNet.Identity.Samples.Common.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Administradores")]
     public class UsersAdminController : Controller
     {
         public UsersAdminController()

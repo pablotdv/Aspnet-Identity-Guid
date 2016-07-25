@@ -1,18 +1,15 @@
-﻿using System.Globalization;
-using IdentitySample.Models;
+﻿using AspNet.Identity.Samples.Common.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using System;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using AspNet.Identity.Samples.pt_BR.ViewModels;
-using AspNet.Identity.Samples.pt_BR.Models;
+using AspNet.Identity.Samples.Common.ViewModels;
 
-namespace IdentitySample.Controllers
+namespace AspNet.Identity.Samples.Common.Controllers
 {
     [Authorize]
     public class ContaController : Controller
@@ -274,7 +271,7 @@ namespace IdentitySample.Controllers
         public ActionResult AutenticacaoExterna(string provider, string returnUrl)
         {
             // Request a redirect to the external login provider
-            return new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Conta", new { ReturnUrl = returnUrl }));
+            return new ChallengeResult(provider, Url.Action("AutenticacaoExternaCallback", "Conta", new { ReturnUrl = returnUrl }));
         }
 
         //
@@ -313,7 +310,7 @@ namespace IdentitySample.Controllers
         }
 
         //
-        // GET: /Conta/ExternalLoginCallback
+        // GET: /Conta/AutenticacaoExternaCallback
         [AllowAnonymous]
         public async Task<ActionResult> AutenticacaoExternaCallback(string returnUrl)
         {
@@ -338,7 +335,7 @@ namespace IdentitySample.Controllers
                     // If the user does not have an account, then prompt the user to create an account
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
-                    return View("ExternalLoginConfirmation", new AutenticacaoExternaConfirmacaoViewModel { Email = loginInfo.Email });
+                    return View("AutenticacaoExternaConfirmacao", new AutenticacaoExternaConfirmacaoViewModel { Email = loginInfo.Email });
             }
         }
 
