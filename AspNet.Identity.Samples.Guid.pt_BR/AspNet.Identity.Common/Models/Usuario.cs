@@ -4,7 +4,7 @@ using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace AspNet.Identity.Samples.Common.Models
+namespace AspNet.Identity.Common.Models
 {
     public class Usuario : IdentityUser<Guid, UsuarioLogin, UsuarioGrupo, UsuarioIdentificacao>
     {

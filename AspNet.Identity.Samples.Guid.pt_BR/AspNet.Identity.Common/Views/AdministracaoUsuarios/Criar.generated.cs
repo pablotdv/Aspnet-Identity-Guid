@@ -30,7 +30,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/AdministracaoUsuarios/Criar.cshtml")]
-    public partial class _Views_AdministracaoUsuarios_Criar_cshtml : System.Web.Mvc.WebViewPage<AspNet.Identity.Samples.Common.ViewModels.RegistrarViewModel>
+    public partial class _Views_AdministracaoUsuarios_Criar_cshtml : System.Web.Mvc.WebViewPage<AspNet.Identity.Common.ViewModels.RegistrarViewModel>
     {
         public _Views_AdministracaoUsuarios_Criar_cshtml()
         {

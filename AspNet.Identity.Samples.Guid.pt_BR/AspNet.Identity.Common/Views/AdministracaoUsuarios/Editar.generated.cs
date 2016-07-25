@@ -30,7 +30,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/AdministracaoUsuarios/Editar.cshtml")]
-    public partial class _Views_AdministracaoUsuarios_Editar_cshtml : System.Web.Mvc.WebViewPage<AspNet.Identity.Samples.Common.ViewModels.EditarUsuarioViewModel>
+    public partial class _Views_AdministracaoUsuarios_Editar_cshtml : System.Web.Mvc.WebViewPage<AspNet.Identity.Common.ViewModels.EditarUsuarioViewModel>
     {
         public _Views_AdministracaoUsuarios_Editar_cshtml()
         {

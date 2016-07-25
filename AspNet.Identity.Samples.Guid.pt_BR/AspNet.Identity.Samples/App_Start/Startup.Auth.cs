@@ -2,10 +2,9 @@
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using AspNet.Identity.Samples.Common.Models;
 using Owin;
 using System;
-using AspNet.Identity.Samples.Common.Models;
+using AspNet.Identity.Common.Models;
 
 namespace AspNet.Identity.Samples
 {

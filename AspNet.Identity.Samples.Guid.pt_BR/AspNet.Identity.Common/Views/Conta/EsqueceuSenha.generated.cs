@@ -30,7 +30,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Conta/EsqueceuSenha.cshtml")]
-    public partial class _Views_Conta_EsqueceuSenha_cshtml : System.Web.Mvc.WebViewPage<AspNet.Identity.Samples.Common.ViewModels.ForgotPasswordViewModel>
+    public partial class _Views_Conta_EsqueceuSenha_cshtml : System.Web.Mvc.WebViewPage<AspNet.Identity.Common.ViewModels.ForgotPasswordViewModel>
     {
         public _Views_Conta_EsqueceuSenha_cshtml()
         {

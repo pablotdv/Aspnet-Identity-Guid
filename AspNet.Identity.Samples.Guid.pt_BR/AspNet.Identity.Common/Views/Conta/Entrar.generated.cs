@@ -30,7 +30,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Conta/Entrar.cshtml")]
-    public partial class _Views_Conta_Entrar_cshtml : System.Web.Mvc.WebViewPage<AspNet.Identity.Samples.Common.ViewModels.EntrarViewModel>
+    public partial class _Views_Conta_Entrar_cshtml : System.Web.Mvc.WebViewPage<AspNet.Identity.Common.ViewModels.EntrarViewModel>
     {
         public _Views_Conta_Entrar_cshtml()
         {
@@ -308,7 +308,7 @@ WriteLiteral("            ");
 
             
             #line 57 "..\..\Views\Conta\Entrar.cshtml"
-       Write(Html.Partial("_AutenticacoesExternasListaPartial", new AspNet.Identity.Samples.Common.ViewModels.AutenticacaoExternaListaViewModel { ReturnUrl = ViewBag.ReturnUrl }));
+       Write(Html.Partial("_AutenticacoesExternasListaPartial", new AspNet.Identity.Common.ViewModels.AutenticacaoExternaListaViewModel { ReturnUrl = ViewBag.ReturnUrl }));
 
             
             #line default

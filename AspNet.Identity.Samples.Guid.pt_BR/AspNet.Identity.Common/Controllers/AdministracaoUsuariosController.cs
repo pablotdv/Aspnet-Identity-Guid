@@ -1,4 +1,4 @@
-﻿using AspNet.Identity.Samples.Common.Models;
+﻿using AspNet.Identity.Common.Models;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Data.Entity;
@@ -7,9 +7,9 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using AspNet.Identity.Samples.Common.ViewModels;
+using AspNet.Identity.Common.ViewModels;
 
-namespace AspNet.Identity.Samples.Common.Controllers
+namespace AspNet.Identity.Common.Controllers
 {
     [Authorize(Roles = "Administradores")]
     public class UsersAdminController : Controller

@@ -36,7 +36,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Conta/_AutenticacoesExternasListaPartial.cshtml")]
-    public partial class _Views_Conta__AutenticacoesExternasListaPartial_cshtml : System.Web.Mvc.WebViewPage<AspNet.Identity.Samples.Common.ViewModels.AutenticacaoExternaListaViewModel>
+    public partial class _Views_Conta__AutenticacoesExternasListaPartial_cshtml : System.Web.Mvc.WebViewPage<AspNet.Identity.Common.ViewModels.AutenticacaoExternaListaViewModel>
     {
         public _Views_Conta__AutenticacoesExternasListaPartial_cshtml()
         {

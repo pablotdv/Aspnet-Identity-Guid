@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 
-namespace AspNet.Identity.Samples.Common.Models
+namespace AspNet.Identity.Common.Models
 {
     public class UsuarioGrupo : IdentityUserRole<Guid>
     {

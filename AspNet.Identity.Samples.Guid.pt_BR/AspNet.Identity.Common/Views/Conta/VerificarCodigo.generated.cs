@@ -30,7 +30,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Conta/VerificarCodigo.cshtml")]
-    public partial class _Views_Conta_VerificarCodigo_cshtml : System.Web.Mvc.WebViewPage<AspNet.Identity.Samples.Common.ViewModels.VerificarCodigoViewModel>
+    public partial class _Views_Conta_VerificarCodigo_cshtml : System.Web.Mvc.WebViewPage<AspNet.Identity.Common.ViewModels.VerificarCodigoViewModel>
     {
         public _Views_Conta_VerificarCodigo_cshtml()
         {

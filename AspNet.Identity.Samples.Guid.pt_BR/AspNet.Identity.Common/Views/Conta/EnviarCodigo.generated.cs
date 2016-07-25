@@ -30,7 +30,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Conta/EnviarCodigo.cshtml")]
-    public partial class _Views_Conta_EnviarCodigo_cshtml : System.Web.Mvc.WebViewPage<AspNet.Identity.Samples.Common.ViewModels.SendCodeViewModel>
+    public partial class _Views_Conta_EnviarCodigo_cshtml : System.Web.Mvc.WebViewPage<AspNet.Identity.Common.ViewModels.SendCodeViewModel>
     {
         public _Views_Conta_EnviarCodigo_cshtml()
         {

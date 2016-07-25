@@ -1,5 +1,5 @@
-﻿using AspNet.Identity.Samples.Common.Models;
-using AspNet.Identity.Samples.Common.ViewModels;
+﻿using AspNet.Identity.Common.Models;
+using AspNet.Identity.Common.ViewModels;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace AspNet.Identity.Samples.Common.Controllers
+namespace AspNet.Identity.Common.Controllers
 {
     [Authorize]
     public class GerenciamentoController : Controller

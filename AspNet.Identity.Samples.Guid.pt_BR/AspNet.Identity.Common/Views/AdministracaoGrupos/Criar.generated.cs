@@ -30,7 +30,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/AdministracaoGrupos/Criar.cshtml")]
-    public partial class _Views_AdministracaoGrupos_Criar_cshtml : System.Web.Mvc.WebViewPage<AspNet.Identity.Samples.Common.Models.Grupo>
+    public partial class _Views_AdministracaoGrupos_Criar_cshtml : System.Web.Mvc.WebViewPage<AspNet.Identity.Common.Models.Grupo>
     {
         public _Views_AdministracaoGrupos_Criar_cshtml()
         {

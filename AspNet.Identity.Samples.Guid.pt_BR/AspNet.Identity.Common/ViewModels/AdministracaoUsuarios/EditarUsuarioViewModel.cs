@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
-namespace AspNet.Identity.Samples.Common.ViewModels
+namespace AspNet.Identity.Common.ViewModels
 {
     public class EditarUsuarioViewModel
     {

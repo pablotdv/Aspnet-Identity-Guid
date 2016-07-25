@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AspNet.Identity.Samples.Common.ViewModels
+namespace AspNet.Identity.Common.ViewModels
 {
     public class SendCodeViewModel
     {

@@ -30,7 +30,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Conta/RedefinirSenha.cshtml")]
-    public partial class _Views_Conta_RedefinirSenha_cshtml : System.Web.Mvc.WebViewPage<AspNet.Identity.Samples.Common.ViewModels.ResetPasswordViewModel>
+    public partial class _Views_Conta_RedefinirSenha_cshtml : System.Web.Mvc.WebViewPage<AspNet.Identity.Common.ViewModels.ResetPasswordViewModel>
     {
         public _Views_Conta_RedefinirSenha_cshtml()
         {

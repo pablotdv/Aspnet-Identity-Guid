@@ -30,7 +30,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Conta/AutenticacaoExternaConfirmacao.cshtml")]
-    public partial class _Views_Conta_AutenticacaoExternaConfirmacao_cshtml : System.Web.Mvc.WebViewPage<AspNet.Identity.Samples.Common.ViewModels.AutenticacaoExternaConfirmacaoViewModel>
+    public partial class _Views_Conta_AutenticacaoExternaConfirmacao_cshtml : System.Web.Mvc.WebViewPage<AspNet.Identity.Common.ViewModels.AutenticacaoExternaConfirmacaoViewModel>
     {
         public _Views_Conta_AutenticacaoExternaConfirmacao_cshtml()
         {

@@ -1,4 +1,4 @@
-﻿using AspNet.Identity.Samples.Common.Models;
+﻿using AspNet.Identity.Common.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System.Linq;
@@ -8,9 +8,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Collections.Generic;
 using System;
-using AspNet.Identity.Samples.Common.ViewModels;
+using AspNet.Identity.Common.ViewModels;
 
-namespace AspNet.Identity.Samples.Common.Controllers
+namespace AspNet.Identity.Common.Controllers
 {
     [Authorize(Roles = "Administradores")]
     public class AdministracaoGruposController : Controller

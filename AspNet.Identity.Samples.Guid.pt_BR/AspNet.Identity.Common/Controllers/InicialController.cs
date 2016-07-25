@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace AspNet.Identity.Samples.Common.Controllers
+namespace AspNet.Identity.Common.Controllers
 {
     public class InicialController : Controller
     {

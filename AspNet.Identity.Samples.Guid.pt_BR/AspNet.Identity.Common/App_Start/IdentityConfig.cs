@@ -9,7 +9,7 @@ using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace AspNet.Identity.Samples.Common.Models
+namespace AspNet.Identity.Common.Models
 {
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
 

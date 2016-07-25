@@ -30,7 +30,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/AdministracaoUsuarios/Indice.cshtml")]
-    public partial class _Views_AdministracaoUsuarios_Indice_cshtml : System.Web.Mvc.WebViewPage<IEnumerable<AspNet.Identity.Samples.Common.Models.Usuario>>
+    public partial class _Views_AdministracaoUsuarios_Indice_cshtml : System.Web.Mvc.WebViewPage<IEnumerable<AspNet.Identity.Common.Models.Usuario>>
     {
         public _Views_AdministracaoUsuarios_Indice_cshtml()
         {
