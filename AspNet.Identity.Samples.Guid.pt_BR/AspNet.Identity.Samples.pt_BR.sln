@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNet.Identity.Samples.Com
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNet.Identity.Samples", "AspNet.Identity.Samples\AspNet.Identity.Samples.csproj", "{8516DF3E-98D9-434B-A874-9FA7C35B2147}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNet.Identity.Common", "AspNet.Identity.Common\AspNet.Identity.Common.csproj", "{530CF796-300D-42CC-9D03-CE6B7B5F0DD1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8516DF3E-98D9-434B-A874-9FA7C35B2147}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8516DF3E-98D9-434B-A874-9FA7C35B2147}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8516DF3E-98D9-434B-A874-9FA7C35B2147}.Release|Any CPU.Build.0 = Release|Any CPU
+		{530CF796-300D-42CC-9D03-CE6B7B5F0DD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{530CF796-300D-42CC-9D03-CE6B7B5F0DD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{530CF796-300D-42CC-9D03-CE6B7B5F0DD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{530CF796-300D-42CC-9D03-CE6B7B5F0DD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

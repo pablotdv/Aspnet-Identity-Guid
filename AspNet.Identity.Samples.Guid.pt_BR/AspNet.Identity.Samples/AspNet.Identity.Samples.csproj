@@ -228,9 +228,9 @@
     <Content Include="Scripts\jquery-3.1.0.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AspNet.Identity.Samples.Guid.pt_BR\AspNet.Identity.Samples.Common.csproj">
-      <Project>{69fcb48e-ccf3-460a-b217-d465335ac229}</Project>
-      <Name>AspNet.Identity.Samples.Common</Name>
+    <ProjectReference Include="..\AspNet.Identity.Common\AspNet.Identity.Common.csproj">
+      <Project>{530cf796-300d-42cc-9d03-ce6b7b5f0dd1}</Project>
+      <Name>AspNet.Identity.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
