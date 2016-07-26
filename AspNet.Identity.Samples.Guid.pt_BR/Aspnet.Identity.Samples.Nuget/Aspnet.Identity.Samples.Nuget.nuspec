@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Microsoft.AspNet.Identity.Guid.pt-BR</id>
+    <version>0.1.4</version>
+    <title>Microsoft.AspNet.Identity.Guid.pt-BR</title>
+    <authors>pablotdv</authors>
+    <owners>pablotdv</owners>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/pablotdv/Aspnet-Identity-Guid</projectUrl>
+    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>It's a Sample of Microsoft AspNet Identity using Guid</description>
+    <releaseNotes>It's first release</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>aspnet identity sample guid</tags>
+
+    <dependencies>
+      <dependency id="Antlr" version="3.4.1.9004" />
+      <dependency id="EntityFramework" version="6.1.0" />
+      <dependency id="Microsoft.AspNet.Identity.Core" version="2.2.1" />
+      <dependency id="Microsoft.AspNet.Identity.EntityFramework" version="2.2.1" />
+      <dependency id="Microsoft.AspNet.Identity.Owin" version="2.2.1" />
+      <dependency id="Microsoft.AspNet.Mvc" version="5.2.3" />
+      <dependency id="Microsoft.AspNet.Razor" version="3.2.3" />
+      <dependency id="Microsoft.AspNet.Web.Optimization" version="1.1.3" />
+      <dependency id="Microsoft.AspNet.WebPages" version="3.2.3" />
+      <dependency id="Microsoft.Owin" version="3.0.1" />
+      <dependency id="Microsoft.Owin.Host.SystemWeb" version="3.0.1" />
+      <dependency id="Microsoft.Owin.Security" version="2.1.0" />
+      <dependency id="Microsoft.Owin.Security.Cookies" version="2.1.0" />
+      <dependency id="Microsoft.Owin.Security.OAuth" version="2.1.0" />
+      <dependency id="Microsoft.Web.Infrastructure" version="1.0.0.0" />
+      <dependency id="Newtonsoft.Json" version="5.0.4" />
+      <dependency id="Owin" version="1.0" />
+      <dependency id="RazorGenerator.Mvc" version="2.4.2" />
+      <dependency id="RazorGenerator.Templating" version="2.3.11" />
+      <dependency id="WebActivatorEx" version="2.0.3" />
+      <dependency id="WebGrease" version="1.5.2" />
+    </dependencies>
+  </metadata>
+</package>

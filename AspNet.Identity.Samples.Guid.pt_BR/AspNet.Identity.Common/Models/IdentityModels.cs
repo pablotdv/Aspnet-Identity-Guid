@@ -9,6 +9,9 @@ namespace AspNet.Identity.Common.Models
 
     public class ApplicationDbContext : IdentityDbContext<Usuario, Grupo, Guid, UsuarioLogin, UsuarioGrupo, UsuarioIdentificacao>
     {
+        public ApplicationDbContext(string nameOrConnectionString) :
+            base(nameOrConnectionString)
+        { }
         public ApplicationDbContext()
             : base("DefaultConnection")
         {

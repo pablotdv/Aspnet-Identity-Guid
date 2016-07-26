@@ -26,6 +26,9 @@ namespace IdentitySample.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid, ApplicationUserLogin, ApplicationUserRole, ApplicationUserClaim>
     {
+        public ApplicationDbContext(string nameOrConnectionString)
+            : base(nameOrConnectionString)
+        { }
         public ApplicationDbContext()
             : base("DefaultConnection")
         {
