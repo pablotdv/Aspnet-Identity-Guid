@@ -8,12 +8,13 @@ using System;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Web;
+using AspNet.Identity.Common.Models;
 
-namespace AspNet.Identity.Common.Models
+namespace AspNet.Identity.Common
 {
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
 
-    public class ApplicationUserManager : UserManager<Usuario, Guid>
+    public class ApplicationUserManager : UserManager<Usuario, Guid>        
     {
         public ApplicationUserManager(IUserStore<Usuario, Guid> store)
             : base(store)
@@ -67,7 +68,7 @@ namespace AspNet.Identity.Common.Models
     }
 
     // Configure the RoleManager used in the application. RoleManager is defined in the ASP.NET Identity core assembly
-    public class ApplicationRoleManager : RoleManager<Grupo, Guid>
+    public class ApplicationRoleManager : RoleManager<Grupo, Guid>        
     {
         public ApplicationRoleManager(IRoleStore<Grupo, Guid> roleStore)
             : base(roleStore)
@@ -99,46 +100,10 @@ namespace AspNet.Identity.Common.Models
     }
 
     // This is useful if you do not want to tear down the database each time you run the application.
-    // public class ApplicationDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
+    // public class ApplicationDbInitializer : DropCreateDatabaseAlways
     // This example shows you how to create a new database if the Model changes
-    public class ApplicationDbInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext> 
-    {
-        protected override void Seed(ApplicationDbContext context) {
-            InitializeIdentityForEF(context);
-            base.Seed(context);
-        }
-
-        //Create User=Admin@Admin.com with password=Admin@123456 in the Admin role        
-        public static void InitializeIdentityForEF(ApplicationDbContext db) {
-            var userManager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            var roleManager = HttpContext.Current.GetOwinContext().Get<ApplicationRoleManager>();
-            const string name = "administrador@exemplo.com.br";
-            const string password = "Admin@123456";
-            const string roleName = "Administradores";
-
-            //Create Role Admin if it does not exist
-            var role = roleManager.FindByName(roleName);
-            if (role == null) {
-                role = new Grupo() { Name = roleName };
-                var roleresult = roleManager.Create(role);
-            }
-
-            var user = userManager.FindByName(name);
-            if (user == null) {
-                user = new Usuario { UserName = name, Email = name };
-                var result = userManager.Create(user, password);
-                result = userManager.SetLockoutEnabled(user.Id, false);
-            }
-
-            // Add user admin to Role Admin if not already added
-            var rolesForUser = userManager.GetRoles(user.Id);
-            if (!rolesForUser.Contains(role.Name)) {
-                var result = userManager.AddToRole(user.Id, role.Name);
-            }
-        }
-    }
-
-    public class ApplicationSignInManager : SignInManager<Usuario, Guid>
+    
+    public class ApplicationSignInManager : SignInManager<Usuario, Guid>        
     {
         public ApplicationSignInManager(ApplicationUserManager userManager, IAuthenticationManager authenticationManager) : 
             base(userManager, authenticationManager) { }

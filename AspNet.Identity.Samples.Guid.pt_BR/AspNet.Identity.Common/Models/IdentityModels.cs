@@ -15,18 +15,19 @@ namespace AspNet.Identity.Common.Models
         public ApplicationDbContext()
             : base("DefaultConnection")
         {
-        }
 
-        static ApplicationDbContext()
-        {
-            // Set the database intializer which is run once during application start
-            // This seeds the database with admin user credentials and admin role
-            Database.SetInitializer<ApplicationDbContext>(new ApplicationDbInitializer());
         }
 
         public static ApplicationDbContext Criar()
         {
             return new ApplicationDbContext();
         }
+
+        static ApplicationDbContext()
+        {
+            // Set the database intializer which is run once during application start
+            // This seeds the database with admin user credentials and admin role
+            // Database.SetInitializer(new ApplicationDbInitializer());
+        }        
     }
 }

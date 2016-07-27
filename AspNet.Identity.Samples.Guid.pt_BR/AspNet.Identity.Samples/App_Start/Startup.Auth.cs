@@ -5,6 +5,7 @@ using Microsoft.Owin.Security.Cookies;
 using Owin;
 using System;
 using AspNet.Identity.Common.Models;
+using AspNet.Identity.Common;
 
 namespace AspNet.Identity.Samples
 {
