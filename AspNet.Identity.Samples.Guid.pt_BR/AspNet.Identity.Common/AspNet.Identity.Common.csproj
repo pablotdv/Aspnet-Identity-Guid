@@ -149,7 +149,6 @@
     <Compile Include="Controllers\AdministracaoUsuariosController.cs" />
     <Compile Include="Controllers\ContaController.cs" />
     <Compile Include="Controllers\GerenciamentoController.cs" />
-    <Compile Include="Controllers\InicialController.cs" />
     <Compile Include="Models\Grupo.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Usuario.cs" />
@@ -503,15 +502,6 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>VerifyPhoneNumber.generated.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Inicial\Contato.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Inicial\Indice.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Inicial\Sobre.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_Layout.cshtml" />

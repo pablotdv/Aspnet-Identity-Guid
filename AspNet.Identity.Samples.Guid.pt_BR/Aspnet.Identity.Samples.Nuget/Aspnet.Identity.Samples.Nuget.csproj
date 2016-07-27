@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="lib\AspNet.Identity.Common.dll" />
     <Content Include="packages.config" />
     <Content Include="Aspnet.Identity.Samples.Nuget.nuspec" />
     <None Include="Web.Debug.config">
@@ -76,7 +77,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="lib\AspNet.Identity.Common.dll" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
